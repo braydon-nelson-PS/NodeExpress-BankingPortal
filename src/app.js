@@ -10,8 +10,15 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 
 const router = express.Router()
+
+const accountData = fs.readFileSync('src/json/accounts.json', 'UTF8');
+const accounts = JSON.parse(accountData);
+
+const userData = fs.readFileSync('src/json/users.json', 'UTF8')
+const users = JSON.parse(userData)
+
 router.get('/', async (req, res, next) => {
-  res.render('index', { title: 'Index'})
+  res.render('index', { title: 'Account Summary', accounts: 'accounts'})
 })
 
 // app.get('/', function (req, res) {
