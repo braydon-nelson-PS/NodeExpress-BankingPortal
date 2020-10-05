@@ -18,7 +18,7 @@ const userData = fs.readFileSync('src/json/users.json', 'UTF8')
 const users = JSON.parse(userData)
 
 router.get('/', async (req, res, next) => {
-  res.render('index', { title: 'Account Summary', accounts: 'accounts'})
+  res.render('index', { title: 'Account Summary', accounts: accounts})
 })
 
 // app.get('/', function (req, res) {
